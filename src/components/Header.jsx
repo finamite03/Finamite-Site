@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import ProductDropdown from './ProductDropdown'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,7 +36,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-white'
+          : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -55,7 +56,7 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <motion.div
                 key={item.name}
@@ -80,6 +81,9 @@ const Header = () => {
                 )}
               </motion.div>
             ))}
+            
+            {/* Products Dropdown */}
+            <ProductDropdown />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -99,7 +103,7 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-200 bg-white"
+              className="md:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md"
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item, index) => (
@@ -122,6 +126,41 @@ const Header = () => {
                     </Link>
                   </motion.div>
                 ))}
+                
+                {/* Mobile Products Links */}
+                <div className="px-4 py-2">
+                  <h3 className="font-semibold text-primary mb-2">Products</h3>
+                  <div className="space-y-1 ml-4">
+                    <Link
+                      to="/products/task-management"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-1 text-text-secondary hover:text-primary"
+                    >
+                      Task Management
+                    </Link>
+                    <Link
+                      to="/products/inventory-management"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-1 text-text-secondary hover:text-primary"
+                    >
+                      Inventory Management
+                    </Link>
+                    <Link
+                      to="/products/lead-management"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-1 text-text-secondary hover:text-primary"
+                    >
+                      Lead Management
+                    </Link>
+                    <Link
+                      to="/products/crm"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-1 text-text-secondary hover:text-primary"
+                    >
+                      CRM Software
+                    </Link>
+                  </div>
+                </div>
               </div>
             </motion.nav>
           )}

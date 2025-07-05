@@ -9,6 +9,11 @@ import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Cancellation from './pages/Cancellation'
+import Products from './pages/Products'
+import TaskManagement from './pages/TaskManagement'
+import InventoryManagement from './pages/InventoryManagement'
+import LeadManagement from './pages/LeadManagement'
+import CRM from './pages/CRM'
 import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
@@ -25,6 +30,11 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/cancellation" element={<Cancellation />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/task-management" element={<TaskManagement />} />
+            <Route path="/products/inventory-management" element={<InventoryManagement />} />
+            <Route path="/products/lead-management" element={<LeadManagement />} />
+            <Route path="/products/crm" element={<CRM />} />
           </Routes>
         </main>
         <Footer />
