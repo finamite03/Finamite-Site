@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Finamite Solutions</title>
+        <link rel="icon" href="img/Untitled&#32;design.png" type="image/png">
+        <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" href="https://glistening-chebakia-c8ebb7.netlify.app/css/font-awesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" href="https://glistening-chebakia-c8ebb7.netlify.app/css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="https://glistening-chebakia-c8ebb7.netlify.app/css/font-awesome.css">
+            <link rel="stylesheet" href="https://glistening-chebakia-c8ebb7.netlify.app/css/animate.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+        </noscript>
+        <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+        </noscript>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <!--[if lt IE 9]>
+            <script src="js/respond-1.1.0.min.js"></script>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/html5element.js"></script>
+        <![endif]-->
+         
+    <style>
+        :root {
+            --primary-color: #005343;
+            --secondary-color: #022140;
+            --text-color: #333;
+            --light-color: #ffffff;
+            --background-light: #f4f6f9;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        #header_wrapper {
+            background: #ffffff;
+            padding: 10px 0px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .header_box {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            float: left;
+            padding-top: 8px;
+        }
+        
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(2, 33, 64, 0.95), rgba(26, 188, 156, 0.9));
+            z-index: 1;
+        }
+
+        .about-hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            text-transform: capitalize;
+            animation: fadeInDown 1s ease;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease;
+        }
+
+        @media (max-width: 991px) {
+            .about-hero {
+                min-height: 60vh;
+                padding: 100px 0;
+            }
+
+            .about-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-hero p {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                min-height: 50vh;
+                padding: 80px 0;
+            }
+
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Our Values Section */
+        .values-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+        .values-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            position: relative;
+        }
+        .value-card {
+            padding: 25px 20px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        .value-card::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, var(--primary-color), transparent);
+            transform: translateX(-50%);
+        }
+        .value-card:last-child::after {
+            display: none;
+        }
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        .value-icon::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 83, 67, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .value-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .value-description {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .value-card::after {
+                height: 30px;
+                bottom: -30px;
+            }
+            .value-card:last-child::after {
+                display: none;
+            }
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .achievement-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .achievement-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .founder-section {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-image, .founder-content {
+                grid-column: 1;
+            }
+
+            .founder-content {
+                padding-right: 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        } /* Previous styles remain the same */
+
+        /* Mission, Vision, Values Section */
+        .mvv-section {
+            background: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mvv-card {
+            background: var(--background-light);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .mvv-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .mvv-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .expertise-section h2 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .expertise-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .expertise-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        .expertise-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .expertise-card p {
+            color: #6B7280;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .expertise-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .expertise-card:hover i {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mvv-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .industry-content {
+                flex-direction: column !important;
+            }
+
+            .industry-image, .industry-details {
+                flex: 0 0 100%;
+            }
+
+            .industry-image img {
+                height: 250px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-section {
+                padding: 100px 0 80px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Our Story Section */
+        .our-story-section {
+            background-color: var(--white);
+            padding: 100px 0;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .story-text {
+            padding: 20px;
+        }
+
+        .story-image {
+            padding: 20px;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .story-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            background-color: var(--background-light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .story-quote {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+        
+        .testimonial-section {
+            background: linear-gradient(135deg, #022140 0%, #005343 100%);
+            padding: 80px 0;
+            min-height: 10%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: visible;
+        }
+
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            gap: 50px;
+            position: relative;
+        }
+
+        .testimonial-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .quote {
+            max-width: 600px;
+        }
+
+        .quote p {
+            font-size: 2rem;
+            line-height: 1.5;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .author-info h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .author-info .position {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            z-index: 2;
+            margin-top: -120px;
+            margin-bottom: -80px;
+        }
+
+        .testimonial-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .testimonial-content {
+                padding-right: 0;
+            }
+
+            .quote p {
+                font-size: 1.5rem;
+            }
+
+            .testimonial-image {
+                justify-content: center;
+                margin-top: -60px;
+                margin-bottom: -40px;
+            }
+
+            .testimonial-image img {
+                max-width: 80%;
+            }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            padding: 0;
+        }
+
+        .navbar-inverse {
+            background-color: transparent;
+            border: none;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .nav > li > a {
+            padding: 15px 12px;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav > li > a:hover,
+        .nav > li > a:focus {
+            color: var(--primary-color);
+            background-color: transparent;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .dropdown-menu > li > a {
+            padding: 10px 20px;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-menu > li > a:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+
+        .navbar-toggle {
+            border: none;
+            padding: 10px;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: var(--text-color);
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header_wrapper">
+        <div class="container">
+          <div class="header_box">
+            <div class="logo">
+              <a href="index.html#"><img src="img/final.png" alt="logo"></a>
+            </div>
+            
+            <nav class="navbar navbar-inverse" role="navigation">
+              <div class="navbar-header">
+                <button type="button" id="nav-toggle" class="navbar-toggle" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" id="mainNav">
+                  <li class="active"><a class='scroll-link' href='index.html'>Home</a></li>
+                  <li><a class='scroll-link' href='services.html'>Services</a></li>
+                  <li><a class='scroll-link' href='aboutus.html'>About Us</a></li>
+                  <li><a class='scroll-link' href='contactus.html'>Contact Us</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Finamite Solutions</h1>
+            <p>Empowering businesses with innovative solutions and transformative technologies</p>
+        </div>
+        <div class="scroll-down">
+            <a href="aboutus.html#about-content">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    
+    <!-- Our Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="values-intro">
+                <h2>Our Values</h2>
+                <p>At Finamite Solutions, our core values guide everything we do, ensuring we deliver exceptional service and create lasting partnerships with our clients:</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-right">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="value-title">Integrity</div>
+                    <div class="value-description">We uphold honesty and transparency in every interaction, building trust with our clients and team.</div>
+                </div>
+                
+                <div class="value-card" data-aos="fade-left">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="value-title">Innovation</div>
+                    <div class="value-description">We embrace creativity and continuously seek better ways to solve business challenges through smart solutions.</div>
+                </div>
+                
+                <div class="value-card" data-aos="fade-right">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="value-title">Commitment</div>
+                    <div class="value-description">We are dedicated to our clients' success, going above and beyond to achieve their goals.</div>
+                </div>
+                
+                <div class="value-card" data-aos="fade-left">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="value-title">Excellence</div>
+                    <div class="value-description">We strive for the highest standards in every project, ensuring quality and reliability in all our systems.</div>
+                </div>
+                
+                <div class="value-card" data-aos="fade-right">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="value-title">Collaboration</div>
+                    <div class="value-description">We believe in teamwork—working closely with clients and within our team to create impactful solutions.</div>
+                </div>
+                
+                <div class="value-card" data-aos="fade-left">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="value-title">Client-Centric Approach</div>
+                    <div class="value-description">Our clients are at the heart of everything we do. We focus on understanding their unique needs and delivering results that exceed expectations.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about-content" class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="testimonial-content">
+                <div class="quote">
+                    <p>"At Finamite Solutions, we believe in transforming businesses through innovative solutions and strategic thinking. Our journey began with a vision to help SMEs achieve their full potential and create lasting impact in their industries."</p>
+                    <div class="author-info">
+                        <h3>Arsh Gaur</h3>
+                        <p class="position">Founder & Business Profit Coach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-image">
+                <img src="img/arshsir's&#32;image.png" alt="Arsh Gaur - Founder of Finamite Solutions">
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .testimonial-section {
+            background: linear-gradient(135deg, #022140 0%, #005343 100%);
+            padding: 80px 0;
+            min-height: 10%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: visible;
+        }
+
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            gap: 50px;
+            position: relative;
+        }
+
+        .testimonial-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .quote {
+            max-width: 600px;
+        }
+
+        .quote p {
+            font-size: 2rem;
+            line-height: 1.5;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .author-info h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .author-info .position {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            z-index: 2;
+            margin-top: -120px;
+            margin-bottom: -80px;
+        }
+
+        .testimonial-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .testimonial-content {
+                padding-right: 0;
+            }
+
+            .quote p {
+                font-size: 1.5rem;
+            }
+
+            .testimonial-image {
+                justify-content: center;
+                margin-top: -60px;
+                margin-bottom: -40px;
+            }
+
+            .testimonial-image img {
+                max-width: 80%;
+            }
+        }
+    </style>
+
+    <!-- Achievements Section -->
+    
+    <!-- Our Story Section -->
+    <section class="our-story-section">
+        <div class="story-container">
+            <div class="story-header">
+                <h2>Our Story</h2>
+            </div>
+            
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>A Journey of Innovation</h3>
+                    <p>Founded with a vision to transform the financial technology landscape, Finamite Solutions emerged from a simple yet powerful idea: to make financial operations seamless, efficient, and accessible to businesses of all sizes.</p>
+                    <p>Our journey began with a deep understanding of the challenges faced by modern businesses in managing their financial processes. Through years of dedication, innovation, and collaboration with industry experts, we've developed cutting-edge solutions that address these challenges head-on.</p>
+                </div>
+                
+                <div class="story-image">
+                    <img src="https://glistening-chebakia-c8ebb7.netlify.app/img/about-story.jpg" alt="Finamite Journey">
+                </div>
+            </div>
+
+            <div class="story-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+            </div>
+
+            <div class="story-quote">
+                <div class="quote-text">
+                    "Our mission is to empower businesses with innovative financial solutions that drive growth and success in the digital age."
+                </div>
+                <div class="quote-author">
+                    - Leadership Team, Finamite Solutions
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="achievements-section">
+        <div class="container">
+            <h2>Our Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Published Author</h3>
+                    <p>2 Business Transformation Books</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Industry Recognition</h3>
+                    <p>Multiple Awards for Business Excellence</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Client Success</h3>
+                    <p>300+ Businesses Transformed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mvv-section">
+        <div class="container">
+            <h2>Mission, Vision, Values</h2>
+            <div class="mvv-grid">
+                <div class="mvv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Mission</h3>
+                    <p>Empowering businesses with innovative solutions and systems that streamline operations, enhance profitability, and drive sustainable growth.</p>
+                </div>
+                <div class="mvv-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Vision</h3>
+                    <p>To become a trusted leader in transforming businesses by creating a world where every organization operates efficiently and thrives.</p>
+                </div>
+                <div class="mvv-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Values</h3>
+                    <p>Excellence, Innovation, Integrity, and Commitment to delivering measurable results for our clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Technical Skills</h3>
+                    <p>Advanced expertise in business analysis tools and financial modeling</p>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Consulting Skills</h3>
+                    <p>Expert guidance in business strategy and growth planning</p>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>System Design</h3>
+                    <p>Creating efficient business systems and workflows</p>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Problem-Solving</h3>
+                    <p>Innovative solutions for complex business challenges</p>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Group Training</h3>
+                    <p>Effective workshop facilitation and team development</p>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Growth Strategy</h3>
+                    <p>Long-term business development and scaling expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                  <!-- Company Description Section -->
+                  <div class="footer-company-desc">
+                      <h2>Finamite Solutions</h2>
+                      <p>Transforming businesses through innovative technology solutions across industries.</p>
+                  </div>
+                    <!-- Company Column -->
+                    <div class="footer-col">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="index.html#">Our Founder</a></li>
+                            <li><a href="index.html#">Testimonials</a></li>
+                            <li><a href="index.html#">Our Values</a></li>
+                            <li><a href="index.html#">Blogs</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Services Column -->
+                    <div class="footer-col">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="index.html#">Business Consulting</a></li>
+                            <li><a href="index.html#">Profit Coaching</a></li>
+                            <li><a href="index.html#">Training</a></li>
+                            <li><a href="index.html#">Implementation</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Mastery Protocols Column -->
+                    <div class="footer-col">
+                        <h3>Mastery Protocols</h3>
+                        <ul>
+                            <li><a href="index.html#">Profit Captains</a></li>
+                            <li><a href="index.html#">Sales Mastery</a></li>
+                            <li><a href="index.html#">Advance Business Mastery</a></li>
+                            <li><a href="index.html#">Advance Business Mastery 2.O</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Contact Column -->
+                    <div class="footer-col">
+                        <h3>Find Us On</h3>
+                        <div class="social-links-grid">
+                            <a href="https://www.facebook.com/finamite/" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                            <a href="https://www.instagram.com/arshgaur_official/" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://whatsapp.com/channel/0029VaiubWG2UPBGt0SiWt1L" class="social-link"><i class="fab fa-whatsapp"></i> WA Channel</a>
+    
+                            <a href="https://www.youtube.com/@caarshgaurbusinessprofitco4182" class="social-link"><i class="fab fa-youtube"></i> Youtube</a>
+                            <a href="https://www.linkedin.com/company/finamite-solutions-llp-arsh-gaur" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="footer-links">
+                        <a href="terms_services.html">Terms of Service</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="cancellation.html"> Refund & Cancellation Policy</a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2024 Finamite Solutions LLP. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #022140 0%, #005343 100%);
+            font-family: 'Inter', sans-serif;
+            color: white;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .footer-main {
+            flex: 1;
+        }
+    
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: nowrap;
+            padding: 0 20px;
+        }
+    
+        .footer-company-desc {
+            flex: 1;
+            padding: 0 15px;
+            text-align: left;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 20%;
+        }
+    
+        .footer-col {
+            flex: 1;
+            padding: 0 15px;
+            min-width: 150px;
+        }
+    
+        .footer-bottom {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            width: 100%;
+        }
+    
+        @media (max-width: 100%) {
+            .footer-grid {
+                flex-wrap: wrap;
+            }
+            .footer-company-desc, .footer-col {
+                flex: 1 1 20%;
+            }
+        }
+    
+        @media (max-width: 991px) {
+            .footer-grid {
+                flex-direction: column;
+            }
+            .footer-company-desc, .footer-col {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    
+    <style>
+      .footer-col h3 {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+    
+      .footer-company-desc h2 {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+    
+      .footer-company-desc p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      .footer-col ul li {
+        margin-bottom: 12px;
+      }
+    
+      .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+    
+      .footer-col ul li a:hover {
+        color: white;
+      }
+    
+      .social-links-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+    
+      .social-link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    
+      .social-link:hover {
+        color: white;
+      }
+    
+      .social-link i {
+        font-size: 16px;
+      }
+    
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
+    
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 13px;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+      }
+    
+      .footer-links a:hover {
+        color: white;
+      }
+    
+      .copyright {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+      }
+    </style>
+    <script>
+        // Animation Trigger
+        document.addEventListener('DOMContentLoaded', () => {
+            const blocks = document.querySelectorAll('.industry-block');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            blocks.forEach(block => {
+                observer.observe(block);
+            });
+        });
+        
+    </script>
+    <script src="https://glistening-chebakia-c8ebb7.netlify.app/whatsapp-button.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://glistening-chebakia-c8ebb7.netlify.app/lib/jquery.min.js"></script>
+    <script src="https://glistening-chebakia-c8ebb7.netlify.app/js/bootstrap.min.js"></script>
+    <script src="https://glistening-chebakia-c8ebb7.netlify.app/js/jquery.isotope.min.js"></script>
+    <script src="https://glistening-chebakia-c8ebb7.netlify.app/js/wow.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <style>
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .scroll-down a {
+            color: #fff;
+            font-size: 1.5rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-down a:hover {
+            transform: translateY(5px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+            .hero-section .subtitle {
+                font-size: 3.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        document.querySelector('.scroll-down a').addEventListener('click', function(e) {
+            e.preventDefault();
+            const nextSection = document.querySelector('#about-content');
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+    <style>
+        .hero-section {
+            min-height: 100vh;
+            background: url('img/about-bg.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+            margin-top: 0;
+        }
+
+        #header_wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #fff;
+        }
+    </style>
+    
+</body>
+</html>

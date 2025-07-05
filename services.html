@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finamite Solutions - Services</title>
+    <link rel="icon" href="img/Untitled&#32;design.png" type="image/png">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css"> 
+    <link href="https://glistening-chebakia-c8ebb7.netlify.app/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://glistening-chebakia-c8ebb7.netlify.app/css/animate.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    <style>
+        :root {
+            --primary-color: #022140;
+            --secondary-color: #3498db;
+            --accent-color: #1abc9c;
+            --hover-color: #005343;
+            --text-primary: #222222;
+            --text-secondary: #666666;
+            --background-light: #ffffff;
+            --section-padding: 80px;
+            --section-margin: 50px;
+            --light-color: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: url('img/test.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+            margin-top: 0;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .hero-section .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .scroll-down a {
+            color: #fff;
+            font-size: 1.5rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-down a:hover {
+            transform: translateY(5px);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+            .hero-section .subtitle {
+                font-size: 3.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn {
+                padding: 12px 30px;
+            }
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        .service-card {
+            background-color: var(--background-light);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.3s ease;
+            background: var(--icon-bg, #e3f2fd);
+            color: var(--icon-color, #1976d2);
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(360deg);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Service card variants */
+        .service-card.coaching {
+            --icon-bg: #e8f5e9;
+            --icon-color: #2e7d32;
+        }
+
+        .service-card.business {
+            --icon-bg: #fff3e0;
+            --icon-color: #e65100;
+        }
+
+        .service-card.consulting {
+            --icon-bg: #e3f2fd;
+            --icon-color: #1976d2;
+        }
+
+        .service-card.implementation {
+            --icon-bg: #f3e5f5;
+            --icon-color: #7b1fa2;
+        }
+
+        /* Books Section */
+        .books-section {
+            background-color: #f4f4f4;
+            padding: 50px 0;
+        }
+
+        .book-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background-color: var(--background-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .book-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .book-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .book-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .book-points {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .book-points li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .book-points li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+        .book-image {
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .book-image img {
+            max-width: 80%;
+            transform: rotate(10deg);
+            transition: transform 0.3s ease;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .book-image:hover img {
+            transform: rotate(0) scale(1.05);
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .course-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+        }
+
+        .course-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-content h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .course-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .course-benefits {
+            margin: 15px 0;
+        }
+
+        .benefit-text {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .enroll-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .enroll-btn:hover {
+            background-color: var(--hover-color);
+        }
+
+        /* Books Section Styles */
+        .books-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .book-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .book-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .book-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .book-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .book-points {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .book-points li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        .book-points li i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .book-image {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .book-image img {
+            max-width: 80%;
+            height: auto;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .book-access-note {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin-top: 20px;
+            font-style: italic;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .book-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .book-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Start Your Journey Section */
+        .journey-section {
+            background: linear-gradient(135deg, var(--primary-color), #034c8c);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .journey-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .journey-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .journey-title {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .journey-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .journey-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white !important;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 2px solid var(--accent-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .journey-btn:hover {
+            background-color: transparent;
+            border-color: white;
+            color: white !important;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .journey-title {
+                font-size: 2.2rem;
+            }
+
+            .journey-description {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+        }
+    </style>
+
+    <style>
+        .services-overview {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #022140 0%, #005343 100%);}
+       
+
+        .services-overview .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+        }
+    </style>
+
+    <style>
+        .services-intro {
+            text-align: center;
+            padding: 60px 0 20px;
+            background-color: var(--background-light);
+        }
+
+        .services-intro h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .services-intro p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+
+    <style>
+        /* Updated Books Section Styles */
+        .books-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #022140 0%, #005343 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .books-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://glistening-chebakia-c8ebb7.netlify.app/img/pattern.png');
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .books-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .books-section .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .book-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-image {
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            order: 2;
+        }
+
+        .book-image img {
+            max-width: 180px;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        .book-card:hover .book-image img {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .book-content {
+            padding: 50px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            order: 1;
+        }
+
+        .book-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .book-description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 1.35rem;
+        }
+
+        .book-price {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .book-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, var(--accent-color), #1abc9c);
+            color: white;
+            text-decoration: none;
+            border-radius: 35px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            align-self: flex-start;
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .book-btn:hover {
+            background: linear-gradient(135deg, #1abc9c, var(--accent-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        @media (max-width: 1200px) {
+            .book-title {
+                font-size: 2rem;
+            }
+            
+            .book-description {
+                font-size: 1.25rem;
+            }
+            
+            .book-content {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .book-card {
+                grid-template-columns: 1fr 200px;
+            }
+
+            .book-content {
+                padding: 30px;
+            }
+
+            .book-title {
+                font-size: 1.75rem;
+            }
+
+            .book-description {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .books-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .book-card {
+                grid-template-columns: 1fr;
+            }
+
+            .book-image {
+                height: 250px;
+                order: 1;
+            }
+
+            .book-content {
+                order: 2;
+                padding: 30px;
+            }
+
+            .book-image img {
+                max-width: 150px;
+            }
+
+            .book-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        
+          
+    </style>
+</head>
+<body>
+
+    <header id="header_wrapper">
+        <div class="container">
+          <div class="header_box">
+            <div class="logo">
+              <a href="index.html#"><img src="img/final.png" alt="logo"></a>
+            </div>
+            
+            <nav class="navbar navbar-inverse" role="navigation">
+              <div class="navbar-header">
+                <button type="button" id="nav-toggle" class="navbar-toggle" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" id="mainNav">
+                  <li class="active"><a class='scroll-link' href='index.html'>Home</a></li>
+                  <li><a class='scroll-link' href='services.html'>Services</a></li>
+                  <li><a class='scroll-link' href='aboutus.html'>About Us</a></li>
+                  <li><a class='scroll-link' href='contactus.html'>Contact Us</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+<style>
+  :root {
+    --primary-color: #022140;
+    --accent-color: #005343;
+    --dark-color: #232323;
+    --light-color: #ffffff;
+    --grey-light: #f0f0f0;
+    --grey-medium: #e9ecef;
+    --background-gray: #f0f0f0;
+    --section-padding: 80px 0;
+    --section-margin: 0;
+  }
+
+  /* Base Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-gray);
+  }
+
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+  }
+
+</style>
+
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Our Services</h1>
+        <h2 class="subtitle"></h2>
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu porttitor pellentesque dolor consequat ligula egestas massa gravitas. Porttitor venenatis enim praesent.</p> -->
+    </div>
+    <!-- <div class="scroll-down">
+        <a href="services.html#services"><i class="fas fa-chevron-down"></i></a>
+    </div> -->
+</section>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Services Introduction -->
+<section class="services-intro">
+    <div class="container">
+        <h2>What core services do we offer, and what does each service aim to achieve?</h2>
+        <p>At Finamite Solutions, we provide a comprehensive suite of services designed to transform your business journey. Our integrated approach combines personalized guidance, structured learning, strategic insights, and practical implementation support to help you achieve sustainable growth and success.</p>
+    </div>
+</section>
+
+<!-- Services Overview Section -->
+<section class="services-overview">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card coaching">
+                <div class="service-icon-wrapper">
+                    <i class="service-icon ri-team-line"></i>
+                </div>
+                <h3 class="service-title">Coaching & Mentoring</h3>
+                <p class="service-description">Personalized guidance tailored to your unique business journey</p>
+            </div>
+
+            <div class="service-card business">
+                <div class="service-icon-wrapper">
+                    <i class="service-icon ri-book-open-line"></i>
+                </div>
+                <h3 class="service-title">Business Courses</h3>
+                <p class="service-description">Comprehensive training programs designed to accelerate your success</p>
+            </div>
+
+            <div class="service-card consulting">
+                <div class="service-icon-wrapper">
+                    <i class="service-icon ri-lightbulb-flash-line"></i>
+                </div>
+                <h3 class="service-title">Strategic Consulting</h3>
+                <p class="service-description">Expert insights to transform your business strategy</p>
+            </div>
+
+            <div class="service-card implementation">
+                <div class="service-icon-wrapper">
+                    <i class="service-icon ri-rocket-2-line"></i>
+                </div>
+                <h3 class="service-title">Implementation Support</h3>
+                <p class="service-description">Hands-on execution to turn your vision into reality</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section class="courses-section">
+    <div class="container">
+        <h2 class="section-title">Our Group Courses</h2>
+        <p class="section-subtitle">Transform your business journey with our expert-led courses</p>
+        <div class="courses-grid">
+            <!-- Profit Masters 2025 -->
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3" alt="Profit Masters">
+                    <div class="course-overlay"></div>
+                </div>
+                <div class="course-content">
+                    <div>
+                        <h3>Profit Masters 2025</h3>
+                        <p>Master the art of sustainable profit generation with cutting-edge strategies</p>
+                        <div class="course-benefits">
+                            <p class="benefit-text">✓ Includes free access to our exclusive business books</p>
+                        </div>
+                    </div>
+                    <a href="services.html#contact" class="enroll-btn" onclick="scrollToContact()">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Advance Business Masters 2025 -->
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3" alt="Advance Business Masters">
+                    <div class="course-overlay"></div>
+                </div>
+                <div class="course-content">
+                    <div>
+                        <h3>Advance Business Masters 2025</h3>
+                        <p>Elevate your business acumen to new heights with advanced methodologies</p>
+                        <div class="course-benefits">
+                            <p class="benefit-text">✓ Includes free access to our exclusive business books</p>
+                        </div>
+                    </div>
+                    <a href="services.html#contact" class="enroll-btn" onclick="scrollToContact()">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- ABM Mentoring 2025 -->
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3" alt="ABM Mentoring">
+                    <div class="course-overlay"></div>
+                </div>
+                <div class="course-content">
+                    <div>
+                        <h3>ABM Mentoring 2025</h3>
+                        <p>Get personalized guidance to accelerate your business growth journey</p>
+                        <div class="course-benefits">
+                            <p class="benefit-text">✓ Includes free access to our exclusive business books</p>
+                        </div>
+                    </div>
+                    <a href="services.html#contact" class="enroll-btn" onclick="scrollToContact()">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Books Section -->
+<section class="books-section">
+  <div class="container">
+      <h2 class="section-title">Our Exclusive Books</h2>
+      <p class="section-subtitle">Free access with any course enrollment or workshop participation</p>
+      <div id="booksSection">
+          <div class="book-card">
+              <div class="book-content">
+                  <h3 class="book-title">Business Transformation Guide</h3>
+                  <p class="book-description">A comprehensive guide to transforming your business for sustainable growth</p>
+                  <ul class="book-points">
+                      <li><i class="ri-check-line"></i> Strategic business transformation</li>
+                      <li><i class="ri-check-line"></i> Growth methodologies</li>
+                      <li><i class="ri-check-line"></i> Success case studies</li>
+                  </ul>
+              </div>
+              <div class="book-image">
+                  <img src="Books/arsh-book1.png" alt="Business Transformation Book">
+              </div>
+          </div>
+
+          <div class="book-card">
+              <div class="book-content">
+                  <h3 class="book-title">Profit Mastery Handbook</h3>
+                  <p class="book-description">Master the art of sustainable profit generation with proven strategies</p>
+                  <ul class="book-points">
+                      <li><i class="ri-check-line"></i> Profit optimization techniques</li>
+                      <li><i class="ri-check-line"></i> Financial management</li>
+                      <li><i class="ri-check-line"></i> Business analytics</li>
+                  </ul>
+              </div>
+              <div class="book-image">
+                  <img src="Books/arsh-book2.png" alt="Profit Mastery Book">
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- Start Your Journey Section -->
+<section class="journey-section">
+    <div class="container">
+        <div class="journey-content">
+            <h2 class="journey-title">Start Your Journey Today</h2>
+            <p class="journey-description">
+                Transform your business potential into reality. Join our community of successful entrepreneurs and take the first step towards sustainable growth and success.
+            </p>
+            <a href="https://thesalesrevolution.in/" class="journey-btn" target="_blank">Get Started Now</a>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+              <!-- Company Description Section -->
+              <div class="footer-company-desc">
+                  <h2>Finamite Solutions</h2>
+                  <p>Transforming businesses through innovative technology solutions across industries.</p>
+              </div>
+                <!-- Company Column -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="index.html#">Our Founder</a></li>
+                        <li><a href="index.html#">Testimonials</a></li>
+                        <li><a href="index.html#">Our Values</a></li>
+                        <li><a href="index.html#">Blogs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Column -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="index.html#">Business Consulting</a></li>
+                        <li><a href="index.html#">Profit Coaching</a></li>
+                        <li><a href="index.html#">Training</a></li>
+                        <li><a href="index.html#">Implementation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Mastery Protocols Column -->
+                <div class="footer-col">
+                    <h3>Mastery Protocols</h3>
+                    <ul>
+                        <li><a href="index.html#">Profit Captains</a></li>
+                        <li><a href="index.html#">Sales Mastery</a></li>
+                        <li><a href="index.html#">Advance Business Mastery</a></li>
+                        <li><a href="index.html#">Advance Business Mastery 2.O</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="footer-col">
+                    <h3>Find Us On</h3>
+                    <div class="social-links-grid">
+                        <a href="https://www.facebook.com/finamite/" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="https://www.instagram.com/arshgaur_official/" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="https://whatsapp.com/channel/0029VaiubWG2UPBGt0SiWt1L" class="social-link"><i class="fab fa-whatsapp"></i> WA Channel</a>
+
+                        <a href="https://www.youtube.com/@caarshgaurbusinessprofitco4182" class="social-link"><i class="fab fa-youtube"></i> Youtube</a>
+                        <a href="https://www.linkedin.com/company/finamite-solutions-llp-arsh-gaur" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <div class="footer-links">
+                    <a href="terms_services.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cancellation.html"> Refund & Cancellation Policy</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2024 Finamite Solutions LLP. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Styles */
+    .footer {
+        background: linear-gradient(135deg, #022140 0%, #005343 100%);
+        font-family: 'Inter', sans-serif;
+        color: white;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-main {
+        flex: 1;
+    }
+
+    .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: nowrap;
+        padding: 0 20px;
+    }
+
+    .footer-company-desc {
+        flex: 1;
+        padding: 0 15px;
+        text-align: left;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        min-width: 20%;
+    }
+
+    .footer-col {
+        flex: 1;
+        padding: 0 15px;
+        min-width: 150px;
+    }
+
+    .footer-bottom {
+        margin-top: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    @media (max-width: 100%) {
+        .footer-grid {
+            flex-wrap: wrap;
+        }
+        .footer-company-desc, .footer-col {
+            flex: 1 1 20%;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .footer-grid {
+            flex-direction: column;
+        }
+        .footer-company-desc, .footer-col {
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+<style>
+  .footer-col h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .footer-company-desc h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .footer-company-desc p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 12px;
+  }
+
+  .footer-col ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-col ul li a:hover {
+    color: white;
+  }
+
+  .social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .social-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .social-link:hover {
+    color: white;
+  }
+
+  .social-link i {
+    font-size: 16px;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 13px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: white;
+  }
+
+  .copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+  }
+</style>
+
+<script>
+    // GSAP Animation Setup
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Service Data
+    const services = [
+        {
+            icon: 'ri-team-line',
+            title: "Coaching & Mentoring",
+            description: "Personalized guidance tailored to your unique business journey",
+            class: "coaching"
+        },
+        {
+            icon: 'ri-book-open-line',
+            title: "Business Courses",
+            description: "Comprehensive training programs designed to accelerate your success",
+            class: "business"
+        },
+        {
+            icon: 'ri-lightbulb-flash-line',
+            title: "Strategic Consulting",
+            description: "Expert insights to transform your business strategy",
+            class: "consulting"
+        },
+        {
+            icon: 'ri-rocket-2-line',
+            title: "Implementation Support",
+            description: "Hands-on execution to turn your vision into reality",
+            class: "implementation"
+        }
+    ];
+
+    // Books Data
+    const books = [
+        {
+            title: "The Profit Revolution",
+            description: "Comprehensive blueprint for business success",
+            keyPoints: [
+                "Advanced business strategies",
+                "Profit enhancement techniques",
+                "Expert insights from industry leaders"
+            ],
+            image: "/Books/arsh-book1.png"
+        },
+        {
+            title: "Sales Mastery",
+            description: "Unlock your sales and marketing potential",
+            keyPoints: [
+                "Proven sales techniques",
+                "Marketing strategy roadmap",
+                "Customer acquisition secrets"
+            ],
+            image: "/Books/arsh-book2.png"
+        }
+    ];
+
+    // Render Services
+    function renderServices() {
+        const servicesGrid = document.getElementById('servicesGrid');
+        services.forEach(service => {
+            const serviceCard = document.createElement('div');
+            serviceCard.className = `service-card ${service.class}`;
+            serviceCard.innerHTML = `
+                <div class="service-icon-wrapper">
+                    <i class="service-icon ${service.icon}"></i>
+                </div>
+                <h3 class="service-title">${service.title}</h3>
+                <p class="service-description">${service.description}</p>
+            `;
+            servicesGrid.appendChild(serviceCard);
+        });
+    }
+
+    // Render Books
+    function renderBooks() {
+        const booksSection = document.getElementById('booksSection');
+        books.forEach(book => {
+            const bookCard = document.createElement('div');
+            bookCard.className = 'book-card';
+            bookCard.innerHTML = `
+                <div class="book-content">
+                    <h3 class="book-title">${book.title}</h3>
+                    <p class="book-description">${book.description}</p>
+                    <ul class="book-points">
+                        ${book.keyPoints.map(point => `
+                            <li><i class="ri-check-line"></i>${point}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                <div class="book-image">
+                    <img src="https://glistening-chebakia-c8ebb7.netlify.app/${book.image}" alt="${book.title}">
+                </div>
+            `;
+            booksSection.appendChild(bookCard);
+        });
+    }
+
+    // Scroll Animations
+    function setupScrollAnimations() {
+        gsap.utils.toArray('.service-card').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top bottom",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.5
+            });
+        });
+
+        gsap.utils.toArray('.book-card').forEach(book => {
+            gsap.from(book, {
+                scrollTrigger: {
+                    trigger: book,
+                    start: "top bottom",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                x: -50,
+                duration: 0.7
+            });
+        });
+
+        gsap.utils.toArray('.course-card').forEach(course => {
+            gsap.from(course, {
+                scrollTrigger: {
+                    trigger: course,
+                    start: "top bottom",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.7,
+                stagger: 0.2
+            });
+        });
+    }
+
+    // Scroll to contact section function
+    function scrollToContact() {
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', () => {
+        renderServices();
+        renderBooks();
+        setupScrollAnimations();
+    });
+</script>
+
+<script>
+    document.querySelector('.scroll-down a').addEventListener('click', function(e) {
+        e.preventDefault();
+        const nextSection = document.querySelector('#services');
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/jquery-1.11.0.min.js"></script>
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/bootstrap.min.js"></script>
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/jquery-scrolltofixed.js"></script>
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/jquery.nav.js"></script> 
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/jquery.easing.1.3.js"></script>
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/jquery.isotope.js"></script>
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/wow.js"></script> 
+<script src="https://glistening-chebakia-c8ebb7.netlify.app/js/custom.js"></script>
+
+</body>
+</html>
